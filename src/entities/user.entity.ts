@@ -11,6 +11,7 @@ import {
 } from 'typeorm'
 
 import { File } from './file.entity'
+import { Folder } from './folder.entity'
 @Entity()
 export class User {
 	@PrimaryGeneratedColumn('uuid')
@@ -24,6 +25,9 @@ export class User {
 
 	@OneToMany(() => File, file => file.user)
 	files!: File[]
+
+	@OneToMany(() => Folder, folder => folder.user)
+	folders: Folder[]
 
 	@CreateDateColumn()
 	created_at!: Date

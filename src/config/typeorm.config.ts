@@ -12,6 +12,9 @@ export default registerAs(
 		// database: process.env.DB_NAME,
 		url: process.env.DB_URL,
 		autoLoadEntities: true,
-		synchronize: true
+		synchronize: true,
+		ssl: {
+			rejectUnauthorized: false
+		}
 	})
 )
