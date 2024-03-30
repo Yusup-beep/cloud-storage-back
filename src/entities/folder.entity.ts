@@ -10,7 +10,7 @@ export class Folder {
 	name: string
 
 	@ManyToOne(() => User, user => user.folders, {
-		nullable: false
+		// nullable: false
 	})
 	user: User
 }
