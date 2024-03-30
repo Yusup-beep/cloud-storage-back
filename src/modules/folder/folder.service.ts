@@ -20,4 +20,8 @@ export class FolderService {
 		newFolder.name = dto.name
 		return this.folderRepository.save(newFolder)
 	}
+
+	async getAllFolders() {
+		return await this.folderRepository.find()
+	}
 }
