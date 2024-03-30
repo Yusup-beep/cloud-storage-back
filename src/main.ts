@@ -14,7 +14,9 @@ async function bootstrap() {
 	app.use('/uploads', express.static(join(__dirname, '..', 'uploads')))
 	app.setGlobalPrefix('api/v1')
 	setupSwagger(app)
-
-	await app.listen(3001)
+	const port = process.env.PORT || 3000
+	console.log(port)
+	await app.listen(port, '0.0.0.0')
 }
+
 bootstrap()
