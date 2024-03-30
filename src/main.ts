@@ -16,7 +16,9 @@ async function bootstrap() {
 	setupSwagger(app)
 	const port = process.env.PORT || 3000
 	console.log(port)
-	await app.listen(port, '0.0.0.0')
+	await app
+		.listen(port, '0.0.0.0')
+		.then(async () => console.log(await app.getUrl()))
 }
 
 bootstrap()
